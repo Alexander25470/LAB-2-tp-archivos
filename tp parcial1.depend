@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1599749534 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\main.cpp
+	"menu.h"
+	"structs.h"
+
+1599749353 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<iostream>
+
+1599746179 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
+
