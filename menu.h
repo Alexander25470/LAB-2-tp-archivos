@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+
 void gotoxy(int x, int y) {
     HANDLE hCon;
     hCon = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -59,7 +61,7 @@ void menuChoferes(){
 switch(menu(textoChoferes,9)){
     case '1':
         system("cls");
-        cout<<"elegiste nuevo chofer";
+        cargarChofer();
         break;
     case '2':
         system("cls");
@@ -67,11 +69,11 @@ switch(menu(textoChoferes,9)){
         break;
     case '3':
         system("cls");
-        cout<<"elegir listar chofer";
+        mostrar_por_dni();
         break;
     case '4':
         system("cls");
-        cout<<"LISTAR TODOS LOS CHOFERES";
+        mostrarChoferes();
         break;
     case '5':
         system("cls");

@@ -1,13 +1,20 @@
 # depslib dependency file v1.0
-1599751135 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\main.cpp
-	"menu.h"
+1599764735 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\main.cpp
 	"structs.h"
+	"funciones.h"
+	"menu.h"
 
-1599751115 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
+1599765084 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
 
-1599746179 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
+1599760453 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
+
+1599765591 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<iostream>
 
