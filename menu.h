@@ -43,33 +43,73 @@ char menu(string cosito[], int opciones) {
             return tecla;
 }
 
-void menuChoferes(string textoChoferes[],int opciones){
+void menuChoferes(){
 
+    string textoChoferes[9];
+    textoChoferes[0]="MENU CHOFERES";
+    textoChoferes[1]="---------------------------------------------------------------------------------------------------------------------";
+    textoChoferes[2]="1) Nuevo chofer";
+    textoChoferes[3]="2) Modificar chofer";
+    textoChoferes[4]="3) Listar choferes por DNI";
+    textoChoferes[5]="4) Listar todos los choferes";
+    textoChoferes[6]="5) Eliminar chofer";
+    textoChoferes[7]="---------------------------------------------------------------------------------------------------------------------";
+    textoChoferes[8]="0) Salir del del Programa";
 
-switch(menu(textoChoferes,opciones)){
-case '1':
-    system("cls");
-    cout<<"elegiste nuevo chofer";
-    break;
-case '2':
-    system("cls");
-    cout<<"elegiste modificar chofer";
-    break;
-case '3':
-    system("cls");
-    cout<<"elegir listar chofer";
-    break;
-case '4':
-    system("cls");
-    cout<<"LISTAR TODOS LOS CHOFERES";
-    break;
-case '5':
-    system("cls");
-    cout<<"eleminar chofer";
-    break;
-case '0':
-    system("exit");
-    break;
+switch(menu(textoChoferes,9)){
+    case '1':
+        system("cls");
+        cout<<"elegiste nuevo chofer";
+        break;
+    case '2':
+        system("cls");
+        cout<<"elegiste modificar chofer";
+        break;
+    case '3':
+        system("cls");
+        cout<<"elegir listar chofer";
+        break;
+    case '4':
+        system("cls");
+        cout<<"LISTAR TODOS LOS CHOFERES";
+        break;
+    case '5':
+        system("cls");
+        cout<<"eleminar chofer";
+        break;
+    case '0':
+        system("exit");
+        break;
+    }
 }
 
+void menuP(){
+        string textoMenuPpal[8];
+    textoMenuPpal[0]="MENU PRINCIPAL";
+    textoMenuPpal[1]="---------------------------------------------------------------------------------------------------------------------";
+    textoMenuPpal[2]="1) Choferes";
+    textoMenuPpal[3]="2) Viajes";
+    textoMenuPpal[4]="3) Reportes";
+    textoMenuPpal[5]="4) Configuracion";
+    textoMenuPpal[6]="---------------------------------------------------------------------------------------------------------------------";
+    textoMenuPpal[7]="0) Salir del del Programa";
+
+
+    switch(menu(textoMenuPpal,8)){
+        case '1':
+            menuChoferes();
+            break;
+        case '2':
+            //algo
+            break;
+        case '3':
+            //algo
+            break;
+        case '4':
+            //algo
+            break;
+        case '0':
+            system("exit");
+            break;
+    }
 }
