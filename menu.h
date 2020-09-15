@@ -33,11 +33,9 @@ void pintar_bordes() {
 };
 char menu(string cosito[], int opciones) {
     system("cls");
-    int Y;
     pintar_bordes();
     for (int i = 0; i < opciones; i++)
     {
-        Y = (i * 2) + 2;
         gotoxy(2, (i * 2) + 2); cout << cosito[i]; //escribe el menu
     }
             cout<<endl;
@@ -56,7 +54,7 @@ void menuChoferes(){
     textoChoferes[5]="4) Listar todos los choferes";
     textoChoferes[6]="5) Eliminar chofer";
     textoChoferes[7]="---------------------------------------------------------------------------------------------------------------------";
-    textoChoferes[8]="0) Salir del del Programa";
+    textoChoferes[8]="0) Volver al menu anterior";
 
 switch(menu(textoChoferes,9)){
     case '1':
@@ -65,7 +63,7 @@ switch(menu(textoChoferes,9)){
         break;
     case '2':
         system("cls");
-        cout<<"elegiste modificar chofer";
+        modificarChofer();
         break;
     case '3':
         system("cls");
@@ -77,7 +75,7 @@ switch(menu(textoChoferes,9)){
         break;
     case '5':
         system("cls");
-        cout<<"eleminar chofer";
+        bajaChofer();
         break;
     case '0':
         system("exit");
@@ -86,32 +84,32 @@ switch(menu(textoChoferes,9)){
 }
 
 void menuP(){
-        string textoMenuPpal[8];
-    textoMenuPpal[0]="MENU PRINCIPAL";
-    textoMenuPpal[1]="---------------------------------------------------------------------------------------------------------------------";
-    textoMenuPpal[2]="1) Choferes";
-    textoMenuPpal[3]="2) Viajes";
-    textoMenuPpal[4]="3) Reportes";
-    textoMenuPpal[5]="4) Configuracion";
-    textoMenuPpal[6]="---------------------------------------------------------------------------------------------------------------------";
-    textoMenuPpal[7]="0) Salir del del Programa";
-
-
-    switch(menu(textoMenuPpal,8)){
-        case '1':
-            menuChoferes();
-            break;
-        case '2':
-            //algo
-            break;
-        case '3':
-            //algo
-            break;
-        case '4':
-            //algo
-            break;
-        case '0':
-            system("exit");
-            break;
+    string textoMenuPpal[8];
+        textoMenuPpal[0]="MENU PRINCIPAL";
+        textoMenuPpal[1]="---------------------------------------------------------------------------------------------------------------------";
+        textoMenuPpal[2]="1) Choferes";
+        textoMenuPpal[3]="2) Viajes";
+        textoMenuPpal[4]="3) Reportes";
+        textoMenuPpal[5]="4) Configuracion";
+        textoMenuPpal[6]="---------------------------------------------------------------------------------------------------------------------";
+        textoMenuPpal[7]="0) Salir del del Programa";
+    char seguirEnMenu='j';
+    while(seguirEnMenu!='0')
+    {
+        switch(seguirEnMenu=menu(textoMenuPpal,8)){
+                case '1':
+                    menuChoferes();
+                    break;
+                case '2':
+                    //algo
+                    break;
+                case '3':
+                    //algo
+                    break;
+                case '4':
+                    //algo
+                    break;
+            }
     }
+
 }

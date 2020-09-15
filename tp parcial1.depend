@@ -4,7 +4,7 @@
 	"funciones.h"
 	"menu.h"
 
-1599765084 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
+1600130047 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
 	<stdio.h>
 	<windows.h>
 	<conio.h>
@@ -12,9 +12,10 @@
 
 1599760453 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
 
-1599765591 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
+1600131069 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
+	<cstring>
 
