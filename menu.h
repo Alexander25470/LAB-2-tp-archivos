@@ -7,6 +7,7 @@
 
 using namespace std;
 
+#include "funciones.h"
 
 
 void gotoxy(int x, int y) {

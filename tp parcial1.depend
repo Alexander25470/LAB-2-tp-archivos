@@ -4,18 +4,23 @@
 	"funciones.h"
 	"menu.h"
 
-1600130047 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
+1600190068 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
+	"funciones.h"
 
 1599760453 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
 
-1600131069 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
+1600190142 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
+	"structs.h"
+
+1600190439 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.cpp
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
 	<cstring>
+	"funciones.h"
 
