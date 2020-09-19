@@ -15,4 +15,12 @@ int buscarNumeroDNI(char *nDNI);
 void mostrarChofer(Choferes reg);
 void mostrarChoferes();
 
+//PROTOTIPOS VIAJES
+int id_automatico(Viajes reg);
+Viajes nuevoViaje();
+bool grabarViaje(Viajes reg);
+void cargarViaje();
+void mostrarViaje(Viajes reg);
+void mostrarViajes();
+void mostrarViajeID();
 ///FIN PROTOTIPOS

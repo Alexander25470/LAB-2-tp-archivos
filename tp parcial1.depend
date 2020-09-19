@@ -24,3 +24,38 @@
 	<cstring>
 	"funciones.h"
 
+1600369296 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\main.cpp
+	"structs.h"
+	"funciones.h"
+	"menu.h"
+
+1600539313 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\structs.h
+
+1600540861 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\funciones.h
+	"structs.h"
+
+1600541160 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\menu.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<iostream>
+	"funciones.h"
+
+1600540857 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\funciones.cpp
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<iostream>
+	<cstring>
+	<ctime>
+	"funciones.h"
+
+1600541160 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\viajes.cpp
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<iostream>
+	<cstring>
+	<ctime>
+	"funciones.h"
+

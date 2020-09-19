@@ -16,3 +16,18 @@ struct Choferes{
     bool esPropietario;
     bool estado;
 };
+
+struct Viajes {
+
+    int idviaje;
+    int horaSalida;
+    int idclient;
+    int calific;
+    char dni[10];
+    char patent[10];
+    float kilom;
+    float impor;
+    bool estado;
+    Fecha fechaViaje;
+
+};

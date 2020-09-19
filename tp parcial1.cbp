@@ -37,8 +37,12 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.h" />
 		<Unit filename="structs.h" />
+		<Unit filename="viajes.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstring>
 #include <ctime>
+
 using namespace std;
 
 #include "funciones.h"
@@ -139,6 +140,7 @@ int buscarNumeroDNI(char *dni)
     fclose(p);
     return -1;
 }
+
 int buscarNumeroCUIT(char *cuit)
 {
     FILE *p;
@@ -159,6 +161,7 @@ int buscarNumeroCUIT(char *cuit)
     fclose(p);
     return -1;
 }
+
 ///FUNCION PARA MOSTRAR TODOS LOS CAMPOS
 void mostrarChofer(Choferes reg)
 {
@@ -171,11 +174,11 @@ void mostrarChofer(Choferes reg)
     cout << reg.apellido << endl;
     cout << endl
          << "F. DE INGRESO: " << endl;
-    cout << "DIA: ";
-    cout << reg.fechaIngreso.dia << endl;
-    cout << "MES: ";
-    cout << reg.fechaIngreso.mes << endl;
-    cout << "ANIO: ";
+    //cout << "DIA: ";
+    cout << reg.fechaIngreso.dia << " / ";
+    //cout << "MES: ";
+    cout << reg.fechaIngreso.mes << " / ";
+    //cout << "ANIO: ";
     cout << reg.fechaIngreso.anio << endl;
     cout << endl
          << "CUIT: ";
@@ -184,11 +187,11 @@ void mostrarChofer(Choferes reg)
     cout << reg.tipoReg << endl;
     cout << endl
          << "FECHA VTO DEL REGISTRO: " << endl;
-    cout << "DIA: ";
-    cout << reg.vencimientoRegistro.dia << endl;
-    cout << "MES: ";
-    cout << reg.vencimientoRegistro.mes << endl;
-    cout << "ANIO: ";
+    //cout << "DIA: ";
+    cout << reg.vencimientoRegistro.dia << " / ";
+    //cout << "MES: ";
+    cout << reg.vencimientoRegistro.mes << " / ";
+    //cout << "ANIO: ";
     cout << reg.vencimientoRegistro.anio << endl;
     cout << endl
          << "TELEFONO: ";
@@ -258,10 +261,12 @@ void mostrar_por_dni()
             cout << endl
                  << "Encontrado" << endl;
             mostrarChofer(reg);
+            system("pause");
         }
     }
     fclose(p);
 }
+
 ///GRABA EN EL ARCHIVO EL REGISTRO QUE LE PASAMOS.
 bool modificarRegistroChofer(Choferes reg, int pos)
 {
