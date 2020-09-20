@@ -1,27 +1,28 @@
 # depslib dependency file v1.0
-1599764735 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\main.cpp
+1600541358 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\main.cpp
 	"structs.h"
 	"funciones.h"
 	"menu.h"
 
-1600190068 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
+1600541358 c:\users\usuario\desktop\lab 2\asd\tp parcial1\menu.h
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
 	"funciones.h"
 
-1599760453 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
+1600541358 c:\users\usuario\desktop\lab 2\asd\tp parcial1\structs.h
 
-1600368816 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
+1600541358 c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.h
 	"structs.h"
 
-1600190439 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.cpp
+1600541358 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\funciones.cpp
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
 	<cstring>
+	<ctime>
 	"funciones.h"
 
 1600369296 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\main.cpp
@@ -51,6 +52,15 @@
 	"funciones.h"
 
 1600541160 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\viajes.cpp
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	<iostream>
+	<cstring>
+	<ctime>
+	"funciones.h"
+
+1600541358 source:c:\users\usuario\desktop\lab 2\asd\tp parcial1\viajes.cpp
 	<stdio.h>
 	<windows.h>
 	<conio.h>

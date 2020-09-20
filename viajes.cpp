@@ -173,7 +173,6 @@ void mostrarViajes()
         mostrarViaje(reg);
     }
     fclose(p);
-    system("pause");
 }
 
 void mostrarViajeID()
@@ -194,7 +193,6 @@ void mostrarViajeID()
             cout << endl
                  << "Encontrado" << endl;
             mostrarViaje(reg);
-            system("pause");
         }
     }
     fclose(p);

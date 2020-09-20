@@ -236,7 +236,11 @@ void mostrarChoferes()
     }
     while (fread(&reg, sizeof(Choferes), 1, p) == 1)
     {
-        mostrarChofer(reg);
+        if(reg.estado==true){
+                mostrarChofer(reg);
+            }else{
+                cout<<"CHOFER DADO DE BAJA";
+            }
     }
     fclose(p);
     system("pause");
@@ -260,7 +264,12 @@ void mostrar_por_dni()
         {
             cout << endl
                  << "Encontrado" << endl;
-            mostrarChofer(reg);
+            if(reg.estado==true){
+                mostrarChofer(reg);
+            }else{
+                cout<<"CHOFER DADO DE BAJA";
+            }
+            
             system("pause");
         }
     }
