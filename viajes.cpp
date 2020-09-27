@@ -111,51 +111,53 @@ int id_automatico(Viajes reg){
 
 void mostrarViaje(Viajes reg)
 {
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    //----------------------------------------------
-    cout<<"ID VIAJE: ";
-    cout<<reg.idviaje<<endl;
-    //----------------------------------------------
-    cout << "DNI CHOFER: ";
-    cout <<reg.dni<<endl;
-    //----------------------------------------------
-    cout << "ID CLIENTE   : ";
-    cout <<reg.idclient<<endl;
-    //----------------------------------------------
-    cout << "F. DE VIAJE: " << endl;
-    //cout << reg.fechaViaje;
-    //----------------------------------------------
+    if(reg.estado){
+        cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+        //----------------------------------------------
+        cout<<"ID VIAJE: ";
+        cout<<reg.idviaje<<endl;
+        //----------------------------------------------
+        cout << "DNI CHOFER: ";
+        cout <<reg.dni<<endl;
+        //----------------------------------------------
+        cout << "ID CLIENTE   : ";
+        cout <<reg.idclient<<endl;
+        //----------------------------------------------
+        cout << "F. DE VIAJE: " << endl;
+        //cout << reg.fechaViaje;
+        //----------------------------------------------
 
-    cout << "HORA VIAJE: ";
-    cout <<  reg.horaSalida<<endl;
-    //----------------------------------------------
+        cout << "HORA VIAJE: ";
+        cout <<  reg.horaSalida<<endl;
+        //----------------------------------------------
 
-    cout<<"KILOMETRAJE DEL VIAJE: ";
-    cout << reg.kilom<<endl;
-    //----------------------------------------------
-    cout<<" IMPORTE VIAJE: ";
-    cout << reg.impor<<endl;
-    //-----------------------------------------------
-    cout << "PATENTE : ";
-    cout << reg.patent<<endl;
-    //--------------------------------------------------
-    cout << "CALIFICACION: ";
-    cout <<  reg.calific<<endl;
-    //----------------------------------------------------
-    if (reg.estado == true)
-    {
-        //rlutil::setColor(rlutil::GREEN);
-        cout << "ESTADO: ACTIVO" << endl;
-    }
-    else
-    {
-        if (reg.estado == false)
+        cout<<"KILOMETRAJE DEL VIAJE: ";
+        cout << reg.kilom<<endl;
+        //----------------------------------------------
+        cout<<" IMPORTE VIAJE: ";
+        cout << reg.impor<<endl;
+        //-----------------------------------------------
+        cout << "PATENTE : ";
+        cout << reg.patent<<endl;
+        //--------------------------------------------------
+        cout << "CALIFICACION: ";
+        cout <<  reg.calific<<endl;
+        //----------------------------------------------------
+        if (reg.estado == true)
         {
-            //rlutil::setColor(rlutil::RED);
-            cout << "ESTADO: INACTIVO" << endl;
+            //rlutil::setColor(rlutil::GREEN);
+            cout << "ESTADO: ACTIVO" << endl;
         }
+        else
+        {
+            if (reg.estado == false)
+            {
+                //rlutil::setColor(rlutil::RED);
+                cout << "ESTADO: INACTIVO" << endl;
+            }
+        }
+        cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
     }
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 }
 
 void mostrarViajes()
@@ -173,6 +175,7 @@ void mostrarViajes()
         mostrarViaje(reg);
     }
     fclose(p);
+    system("pause");
 }
 
 void mostrarViajeID()
@@ -193,7 +196,46 @@ void mostrarViajeID()
             cout << endl
                  << "Encontrado" << endl;
             mostrarViaje(reg);
+            system("pause");
         }
     }
     fclose(p);
+}
+
+void crearBackUpViajes(){
+    FILE *p;
+    FILE *pb;
+    Viajes reg;
+    p = fopen("cargarViaje.dat", "rb");
+    pb = fopen("cargarViaje.bkp", "wb+");
+    if (p == NULL)
+    {
+        cout << "ERROR DE ARCHIVO";
+        return;
+    }
+    while (fread(&reg, sizeof(Viajes), 1, p) == 1)
+    {
+        fwrite(&reg, sizeof(reg), 1, pb);
+    }
+    fclose(p);
+    fclose(pb);
+}
+
+void restaurarBackUpViajes(){
+    FILE *p;
+    FILE *pb;
+    Viajes reg;
+    p = fopen("cargarViaje.bkp", "rb");
+    pb = fopen("cargarViaje.dat", "wb+");
+    if (p == NULL)
+    {
+        cout << "ERROR DE ARCHIVO";
+        return;
+    }
+    while (fread(&reg, sizeof(Viajes), 1, p) == 1)
+    {
+        fwrite(&reg, sizeof(reg), 1, pb);
+    }
+    fclose(p);
+    fclose(pb);
 }

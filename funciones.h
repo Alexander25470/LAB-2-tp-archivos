@@ -23,4 +23,10 @@ void cargarViaje();
 void mostrarViaje(Viajes reg);
 void mostrarViajes();
 void mostrarViajeID();
+
+//PROTOTIPOS BACKUPS
+void crearBackUp();///CREA BACK UP CHOFERES
+void restaurarBackUp();///RESTAURA BACK UP CHOFERES
+void crearBackUpViajes();///CREA BACKUP VIAJES
+void restaurarBackUpViajes();/// RESTAURA BACK UP VIAJES
 ///FIN PROTOTIPOS

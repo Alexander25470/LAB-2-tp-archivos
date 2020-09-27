@@ -39,7 +39,7 @@ Choferes nuevoChofer()
     {
         cout << "TIPO REGISTRO: ";
         cin >> reg.tipoReg;
-    } while (reg.tipoReg < 0 || reg.tipoReg > 3);
+    }while (reg.tipoReg < 0 || reg.tipoReg > 3);
     //----------------------------------------------------
 
     cout << "FECHA VTO DEL REGISTRO: " << endl;
@@ -165,62 +165,58 @@ int buscarNumeroCUIT(char *cuit)
 ///FUNCION PARA MOSTRAR TODOS LOS CAMPOS
 void mostrarChofer(Choferes reg)
 {
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "DNI: ";
-    cout << reg.dni << endl;
-    cout << "NOMBRE CHOFER   : ";
-    cout << reg.nombre << endl;
-    cout << "APELLIDO CHOFER : ";
-    cout << reg.apellido << endl;
-    cout << endl
-         << "F. DE INGRESO: " << endl;
-    //cout << "DIA: ";
-    cout << reg.fechaIngreso.dia << " / ";
-    //cout << "MES: ";
-    cout << reg.fechaIngreso.mes << " / ";
-    //cout << "ANIO: ";
-    cout << reg.fechaIngreso.anio << endl;
-    cout << endl
-         << "CUIT: ";
-    cout << reg.cuit << endl;
-    cout << "TIPO REGISTRO: ";
-    cout << reg.tipoReg << endl;
-    cout << endl
-         << "FECHA VTO DEL REGISTRO: " << endl;
-    //cout << "DIA: ";
-    cout << reg.vencimientoRegistro.dia << " / ";
-    //cout << "MES: ";
-    cout << reg.vencimientoRegistro.mes << " / ";
-    //cout << "ANIO: ";
-    cout << reg.vencimientoRegistro.anio << endl;
-    cout << endl
-         << "TELEFONO: ";
-    cout << reg.telefono << endl;
-    cout << "PROPIETARIO: ";
-    if (reg.esPropietario == 1)
-    {
-        cout << "SI." << endl;
-    }
-    else
-    {
-        cout << "NO." << endl;
-    }
-    if (reg.estado == true)
-    {
-        //rlutil::setColor(rlutil::GREEN);
-        cout << "ACTIVO" << endl;
-    }
-    else
-    {
-        if (reg.estado == false)
+    if(reg.estado){
+        cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
+        cout << "DNI: ";
+        cout << reg.dni << endl;
+        cout << "NOMBRE CHOFER   : ";
+        cout << reg.nombre << endl;
+        cout << "APELLIDO CHOFER : ";
+        cout << reg.apellido << endl;
+        cout << endl
+            << "F. DE INGRESO: " << endl;
+        cout << reg.fechaIngreso.dia << " / ";
+        cout << reg.fechaIngreso.mes << " / ";
+        cout << reg.fechaIngreso.anio << endl;
+        cout << endl
+            << "CUIT: ";
+        cout << reg.cuit << endl;
+        cout << "TIPO REGISTRO: ";
+        cout << reg.tipoReg << endl;
+        cout << endl
+            << "FECHA VTO DEL REGISTRO: " << endl;
+        cout << reg.vencimientoRegistro.dia << " / ";
+        cout << reg.vencimientoRegistro.mes << " / ";
+        cout << reg.vencimientoRegistro.anio << endl;
+        cout << endl
+            << "TELEFONO: ";
+        cout << reg.telefono << endl;
+        cout << "PROPIETARIO: ";
+        if (reg.esPropietario == 1)
         {
-            //rlutil::setColor(rlutil::RED);
-            cout << "DADO DE BAJA" << endl;
+            cout << "SI." << endl;
         }
+        else
+        {
+            cout << "NO." << endl;
+        }
+        if (reg.estado == true)
+        {
+            //rlutil::setColor(rlutil::GREEN);
+            cout << "ACTIVO" << endl;
+        }
+        else
+        {
+            if (reg.estado == false)
+            {
+                //rlutil::setColor(rlutil::RED);
+                cout << "DADO DE BAJA" << endl;
+            }
+        }
+        //rlutil::setColor(rlutil::WHITE);
+        cout << "------------------------------------------------------------------------------------------------------------------------" << endl
+            << endl;
     }
-    //rlutil::setColor(rlutil::WHITE);
-    cout << "------------------------------------------------------------------------------------------------------------------------" << endl
-         << endl;
 }
 
 ///FUNCION PARA LEER EL ARCHIVO Y MOSTRAR USUARIOS.
@@ -236,11 +232,7 @@ void mostrarChoferes()
     }
     while (fread(&reg, sizeof(Choferes), 1, p) == 1)
     {
-        if(reg.estado==true){
-                mostrarChofer(reg);
-            }else{
-                cout<<"CHOFER DADO DE BAJA";
-            }
+        mostrarChofer(reg);
     }
     fclose(p);
     system("pause");
@@ -264,18 +256,18 @@ void mostrar_por_dni()
         {
             cout << endl
                  << "Encontrado" << endl;
-            if(reg.estado==true){
-                mostrarChofer(reg);
-            }else{
-                cout<<"CHOFER DADO DE BAJA";
-            }
-            
-            system("pause");
+                 if(reg.estado){
+                    mostrarChofer(reg);
+                    system("pause");
+                }else{
+                    system("cls");
+                    cout<<"CHOFER DADO DE BAJA"<<endl;
+                    system("pause");
+                }
         }
     }
     fclose(p);
 }
-
 ///GRABA EN EL ARCHIVO EL REGISTRO QUE LE PASAMOS.
 bool modificarRegistroChofer(Choferes reg, int pos)
 {
@@ -337,7 +329,7 @@ void bajaChofer()
 {
     char dni[10];
     Choferes reg;
-    char asd;
+    int asd;
     int pos;
     ///PEDIR INGRESO MATERIA A ELIMINAR
     cout << "INGRESE EL DNI DEL CHOFER QUE DESEA DAR DE BAJA: ";
@@ -357,19 +349,27 @@ void bajaChofer()
         cout << "NO SE PUDO LEER EL REGISTRO" << endl;
         return;
     }
-
-    cout << "Est� seguro de que desea dar de baja el chofer? " << endl;
-    cin >> asd;
-    cout << "Bueno, se da de baja igual";
-    system("pause");
-    reg.estado = false;
-
-    if (modificarRegistroChofer(reg, pos) == true)
-    {
-        cout << "DADO DE BAJA EXITOSAMENTE" << endl;
+    cout << "Esta seguro de que desea dar de baja el chofer? " << endl;
+    cout<<"S >> SI"<<endl;
+    cout<<"N >> NO"<< endl;
+    asd=getch();
+    while(!(asd == 115 || asd == 83 || asd == 110 || asd == 78)){
+        cout<<"ELIJA ENTRE S para si, o N para no"<<endl;
+        asd=getch();
     }
-    else
-        cout << "NO SE PUDO DAR DE BAJA" << endl;
+    if(asd=='s' || asd=='S'){
+        reg.estado = false;
+        if (modificarRegistroChofer(reg, pos) == true)
+        {
+            cout << "DADO DE BAJA EXITOSAMENTE" << endl;
+        }
+        else
+            cout << "NO SE PUDO DAR DE BAJA" << endl;
+    }else{
+        cout<<"NO SE DIO DE BAJA"<<endl;
+
+    }
+    system("pause");
 }
 
 /*void bajaTotal(){
@@ -482,4 +482,44 @@ Fecha cargarFecha(bool registro)
     }
     return fecha;
 }
+
+void crearBackUp(){
+    FILE *p;
+    FILE *pb;
+    Choferes reg;
+    p = fopen("cargarChofer.dat", "rb");
+    pb = fopen("cargarChofer.bkp", "wb+");
+    if (p == NULL)
+    {
+        cout << "ERROR DE ARCHIVO";
+        return;
+    }
+    while (fread(&reg, sizeof(Choferes), 1, p) == 1)
+    {
+        fwrite(&reg, sizeof(reg), 1, pb);
+    }
+    fclose(p);
+    fclose(pb);
+}
+
+
+void restaurarBackUp(){
+    FILE *p;
+    FILE *pb;
+    Choferes reg;
+    p = fopen("cargarChofer.bkp", "rb");
+    pb = fopen("cargarChofer.dat", "wb+");
+    if (p == NULL)
+    {
+        cout << "ERROR DE ARCHIVO";
+        return;
+    }
+    while (fread(&reg, sizeof(Choferes), 1, p) == 1)
+    {
+        fwrite(&reg, sizeof(reg), 1, pb);
+    }
+    fclose(p);
+    fclose(pb);
+}
+
 

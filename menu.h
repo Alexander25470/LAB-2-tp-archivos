@@ -32,7 +32,7 @@ void pintar_bordes() {
     gotoxy(119, 1); printf("%c", 187);
     gotoxy(119, 30); printf("%c", 188);
 };
-char menu(string cosito[], int opciones) {
+char menu(string cosito[], int opciones){
     system("cls");
     pintar_bordes();
     for (int i = 0; i < opciones; i++)
@@ -159,10 +159,12 @@ void menuConfiguracion(){
     {
         switch(seguirEnMenu=menu(textoMenuPpal,8)){
                 case '1':
-                    cout<<"REALIZAR BACKUP";
+                    crearBackUp();
+                    crearBackUpViajes();
                     break;
                 case '2':
-                    cout<< "RESTAURAR BACKUP";
+                    restaurarBackUp();
+                    restaurarBackUpViajes();
                     break;
                 case '3':
                     cout<< "CARGAR DATOS DE INICIO";
