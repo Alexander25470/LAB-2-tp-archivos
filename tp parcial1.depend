@@ -31,17 +31,17 @@
 
 1600539313 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\structs.h
 
-1601232366 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\funciones.h
+1601410053 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\funciones.h
 	"structs.h"
 
-1601232485 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\menu.h
+1601410092 c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\menu.h
 	<stdio.h>
 	<windows.h>
 	<conio.h>
 	<iostream>
 	"funciones.h"
 
-1601232366 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\funciones.cpp
+1601409316 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\funciones.cpp
 	<stdio.h>
 	<windows.h>
 	<conio.h>
@@ -50,7 +50,7 @@
 	<ctime>
 	"funciones.h"
 
-1601232366 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\viajes.cpp
+1601410007 source:c:\users\emi\desktop\emi\utn\laboratorio ii\parcial 1\lab-2-tp-archivos-master\viajes.cpp
 	<stdio.h>
 	<windows.h>
 	<conio.h>

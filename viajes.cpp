@@ -22,7 +22,7 @@ Viajes nuevoViaje()
     do{
         cout << "DNI CHOFER: ";
         cargarCadena(reg.dni, 10);
-    }while(buscarNumeroDNI(reg.dni)!=-1);
+    }while(buscarNumeroDNI(reg.dni)==-1);
     //----------------------------------------------
     cout << "ID CLIENTE   : ";
     cin>>reg.idclient;
@@ -37,16 +37,16 @@ Viajes nuevoViaje()
     } while (reg.horaSalida < 0 || reg.horaSalida > 23);
     //----------------------------------------------
     do{
-        cout<<" INGRESE KILOMETRAJE DEL VIAJE: ";
+        cout<<"INGRESE KILOMETRAJE DEL VIAJE: ";
         cin>>reg.kilom;
     }while(reg.kilom<=0);
     //----------------------------------------------
     do{
-    cout<<" IMPORTE VIAJE: ";
+    cout<<"IMPORTE VIAJE: $";
     cin>>reg.impor;
     }while(reg.impor<=0);
     //-----------------------------------------------
-    cout << "IMPORTE PATENTE : ";
+    cout << "PATENTE : ";
     cin.ignore();
     cargarCadena(reg.patent, 50);
     //--------------------------------------------------
@@ -238,4 +238,104 @@ void restaurarBackUpViajes(){
     }
     fclose(p);
     fclose(pb);
+}
+
+void bajaViaje()
+{
+    int idviaje;
+    Viajes reg;
+    int asd;
+    int pos;
+    ///PEDIR INGRESO ID VIAJE A ELIMINAR
+    cout << "INGRESE EL ID DEL VIAJE QUE DESEA DAR DE BAJA: ";
+    //cin.ignore();
+    cin>>idviaje;
+    ///VER SI EXISTE.
+    pos = buscarNumeroID(idviaje);
+    /// SI NO EXISTE INFORMAR Y TERMINAR
+    if (pos == -1)
+    {
+        cout << "NO EXISTE EL CHOFER" << endl;
+        return;
+    }
+
+    if (leerViaje(pos, &reg) == false)
+    {
+        cout << "NO SE PUDO LEER EL REGISTRO" << endl;
+        return;
+    }
+    cout << "Esta seguro de que desea dar de baja el viaje? " << endl;
+    cout<<"S >> SI"<<endl;
+    cout<<"N >> NO"<< endl;
+    asd=getch();
+    while(!(asd == 115 || asd == 83 || asd == 110 || asd == 78)){
+        cout<<"ELIJA ENTRE S para si, o N para no"<<endl;
+        asd=getch();
+    }
+    if(asd=='s' || asd=='S'){
+        reg.estado = false;
+        if (modificarRegistroViaje(reg, pos) == true)
+        {
+            cout << "DADO DE BAJA EXITOSAMENTE" << endl;
+        }
+        else
+            cout << "NO SE PUDO DAR DE BAJA" << endl;
+    }else{
+        cout<<"NO SE DIO DE BAJA"<<endl;
+
+    }
+    system("pause");
+}
+
+int buscarNumeroID(int id)
+{
+    FILE *p;
+    Viajes reg;
+    int pos = 0;
+    p = fopen("cargarViaje.dat", "rb");
+    if (p == NULL){
+        cout<<"EL ARCHIVO ES NULO";
+        system("pause");
+        return -1;
+    }
+
+    while (fread(&reg, sizeof(reg), 1, p) == 1)
+    {
+        if (id == reg.idviaje)
+        {
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+    cout<<"NO SE ENCONTRO PUTO.";
+    system("pause");
+    fclose(p);
+    return -1;
+}
+
+bool leerViaje(int pos, Viajes *pReg)
+{
+    FILE *p;
+    bool leyo;
+    p = fopen("cargarViaje.dat", "rb");
+    if (p == NULL)
+        return false;
+    fseek(p, pos * sizeof(Viajes), 0);
+    leyo = fread(pReg, sizeof(Viajes), 1, p);
+    fclose(p);
+    return leyo;
+}
+
+bool modificarRegistroViaje(Viajes reg, int pos)
+{
+    FILE *p;
+    bool escribio;
+    p = fopen("cargarViaje.dat", "rb+");
+    if (p == NULL)
+        return false;
+    fseek(p, sizeof reg * pos, 0);
+    escribio = fwrite(&reg, sizeof reg, 1, p);
+    fclose(p);
+    return escribio;
 }

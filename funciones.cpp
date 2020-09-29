@@ -310,13 +310,6 @@ void modificarChofer()
 
     reg.vencimientoRegistro = cargarFecha(false);
 
-    /*cout << "ingrese el nuevo dia";
-    cin >> reg.vencimientoRegistro.dia;
-    cout << "ingrese el nuevo mes";
-    cin >> reg.vencimientoRegistro.mes;
-    cout << "ingrese el nuevo anio";
-    cin >> reg.vencimientoRegistro.anio;*/
-
     if (modificarRegistroChofer(reg, pos) == true)
     {
         cout << "MODIFICACION REALIZADA" << endl;
@@ -371,18 +364,6 @@ void bajaChofer()
     }
     system("pause");
 }
-
-/*void bajaTotal(){
-    Choferes reg;
-    if(bajaChofer(reg)==true){
-        cout<<"SE DIO LA BAJA CORRECTAMENTE.";
-    }else{
-        cout<<"EL ID INGRESADO NO EXISTE.";
-    }
-
-}*/
-
-/*Funcion para verificar que la cadena no este vacia.(strlen indica la cantidad de caracteres en la cadena)*/
 
 void cargarCadena(char *cadena, int tam, bool pv)
 {
@@ -522,4 +503,41 @@ void restaurarBackUp(){
     fclose(pb);
 }
 
+void restaurarBackUpInicioViajes(){
+    FILE *p;
+    FILE *pb;
+    Viajes reg;
+    p = fopen("cargarViaje.ini", "rb");
+    pb = fopen("cargarViaje.dat", "wb+");
+    if (p == NULL)
+    {
+        cout << "ERROR DE ARCHIVO";
+        return;
+    }
+    while (fread(&reg, sizeof(Viajes), 1, p) == 1)
+    {
+        fwrite(&reg, sizeof(reg), 1, pb);
+    }
+    fclose(p);
+    fclose(pb);
+}
+
+void restaurarBackUpInicioChof(){
+    FILE *p;
+    FILE *pb;
+    Choferes reg;
+    p = fopen("cargarChofer.ini", "rb");
+    pb = fopen("cargarChofer.dat", "wb+");
+    if (p == NULL)
+    {
+        cout << "ERROR DE ARCHIVO";
+        return;
+    }
+    while (fread(&reg, sizeof(Choferes), 1, p) == 1)
+    {
+        fwrite(&reg, sizeof(reg), 1, pb);
+    }
+    fclose(p);
+    fclose(pb);
+}
 

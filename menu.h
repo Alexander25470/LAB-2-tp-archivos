@@ -113,7 +113,9 @@ void menuViajes(){
                     system("pause");
                     break;
                 case '4':
-                    cout<<"ELIMINAR VIAJE";
+                    system("cls");
+                    bajaViaje();
+                    system("pause");
                     break;
             }
     }
@@ -167,7 +169,8 @@ void menuConfiguracion(){
                     restaurarBackUpViajes();
                     break;
                 case '3':
-                    cout<< "CARGAR DATOS DE INICIO";
+                    restaurarBackUpInicioChof();
+                    restaurarBackUpInicioViajes();
                     break;
             }
     }
